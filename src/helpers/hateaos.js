@@ -1,4 +1,7 @@
 const prepareHateoas = async (entity, data) => {
+  
+  let stockTotal = data.reduce((total, item) => total + item.stock, 0);
+
     const results = data
       .map((v) => {
         return {
@@ -7,9 +10,10 @@ const prepareHateoas = async (entity, data) => {
         };
       })
       .slice(0, 4);
-    const total = data.length;
+    const totalJoyas = data.length;
     const HATEOAS = {
-      total,
+      totalJoyas,
+      stockTotal,
       results,
     };
     return HATEOAS;

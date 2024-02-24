@@ -1,10 +1,10 @@
 import express from 'express';
-import {  }  from '../src/controllers/jewelsController.js'
+import { getJewels }  from '../src/controllers/jewelsController.js'
 
 const router = express.Router();
 
-router.get('/joyas', )
-router.get('/joyas/filtros', )
+router.get('/joyas', getJewels )
+//router.get('/joyas/filtros', )
 
 
 export default router;
