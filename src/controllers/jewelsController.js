@@ -3,8 +3,6 @@ import { getJewel,
         getJewelFilters  
                     } from "../models/jewelModel.js";
 
-//import prepareHateoas from "../helpers/hateoas.js";
-
 const getJewels = async (req, res) => {
   try {
     const queryStrings = req.query
