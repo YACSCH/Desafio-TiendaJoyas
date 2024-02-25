@@ -1,5 +1,6 @@
 import prepareHateoas from "../helpers/hateaos.js";
-import { getJewel 
+import { getJewel,
+        getJewelFilters  
                     } from "../models/jewelModel.js";
 
 //import prepareHateoas from "../helpers/hateoas.js";
@@ -16,4 +17,16 @@ const getJewels = async (req, res) => {
   }
 };
 
-export { getJewels };
+const getJewelsFilter = async (req, res) => {
+  try {
+    const queryStrings = req.query
+    const jewels = await getJewelFilters(queryStrings)
+    res.status(200).json(jewels);
+  } catch (error) {
+    res.status(500).json({ error: "Error al procesar la solicitud" });
+    console.error("Error al procesar la solicitud:", error);
+  }
+};
+
+export { getJewels, 
+  getJewelsFilter };
