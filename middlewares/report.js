@@ -3,6 +3,7 @@ const getActivity = async (req, res, next) => {
     const parametros = req.params
     const query = req.query
     const url = req.url
+    
     console.log(
       `Hoy ${new Date()} 
       se ha recibido una consulta de la ruta ${url}
