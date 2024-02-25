@@ -15,7 +15,7 @@ const getJewel = async ({ limits = 1, order_by = "id_ASC", page = 0 }) => {
   const { rows: jewels } = await pool.query(formattedQuery);
   return jewels;
 };
-const getJewelFilters = async ({ precio_max, precio_min, categoria, metal }) => {
+const getJewelFilters = async ({ precio_min, precio_max, categoria, metal }) => {
   let filtros = [];
   const values = [];
 

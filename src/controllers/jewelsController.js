@@ -9,7 +9,7 @@ const getJewels = async (req, res) => {
   try {
     const queryStrings = req.query
     const jewels = await getJewel(queryStrings)
-    const jewelsHateos = await prepareHateoas("joyas/joya",jewels)
+    const jewelsHateos = await prepareHateoas("joya",jewels)
     res.status(200).json(jewelsHateos);
   } catch (error) {
     res.status(500).json({ error: "Error al procesar la solicitud" });
